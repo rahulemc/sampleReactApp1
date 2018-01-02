@@ -1,0 +1,29 @@
+.breadcrumb {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding: .75rem 1rem;
+    margin-bottom: 0rem;
+    list-style: none;
+    background-color: transparent !important;
+    border-radius: .25rem;
+}
+
+.breadcrumbSection li a{
+    color: #222;
+}
+
+.breadcrumb>li+li:before {
+    padding: 0 5px;
+    color: #222;
+    content: "> \00a0";
+}
+
+.breadcrumb>.active {
+    color: #222;
+}
+
+.breadcrumb>.active.active {
+    color: #337ab7;
+}

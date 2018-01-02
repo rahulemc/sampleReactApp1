@@ -1,0 +1,55 @@
+.my-app-create-section .col-md-4{
+    min-height: 200px;
+    border: 1px solid #ccc;
+    margin: 0px;
+    padding: 0px;
+}
+
+.my-app-create-section .col-md-4 .box-title2{
+    background: #e8f4fd;
+    width: 100%;
+    padding: 5px;
+    text-align: center;
+}
+.title-text{
+    margin: 15px 0px 15px 0px;
+}
+.sub-title-section{
+    display: block;
+    padding: 10px;
+}
+.select-editor{
+    float: right;
+}
+
+.box-tiems-list li{
+    list-style-type: none;
+}
+
+.DemoAppSideNav-link-section{
+    background: #e8f4fd;
+    padding: 5px;
+
+}
+.DemoAppSideNav-link-section ul {
+    padding: 5px;
+}
+
+.DemoAppSideNav-link-section ul li{
+    line-height: 2em;
+}
+
+.nav-link a:hover {
+    color: #007bff;
+}
+.demo-app-header .navbar-menu{
+    display: flex;
+    background: #e8f4fd;
+}
+
+.demo-app-header .navbar-menu .nav-link.active a {
+    color: #222;
+}
+.demo-app-header .navbar-menu .nav-link.active a:hover {
+    color: #007bff;
+}
