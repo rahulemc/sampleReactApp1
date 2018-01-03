@@ -16,11 +16,11 @@ import {Breadcrumbs} from 'react-breadcrumbs-dynamic';
 import { BreadcrumbsWithIcon, BreadcrumbsSimple } from '../../components/Breadcrumbs';
 
 import DemoAppSideNav from './DemoAppSideNav';
-import DataTable from './DataTable';
+//import DataTable from './DataTable';
 
 
-//import {Table, Column, Cell} from 'fixed-data-table-2';
-//import 'fixed-data-table-2/dist/fixed-data-table.css';
+import {Table, Column, Cell} from 'fixed-data-table-2';
+import 'fixed-data-table-2/dist/fixed-data-table.css';
 
 
 const sub_path = mainPath+'/developerResource/';
@@ -31,11 +31,30 @@ const NavItem = ({to,...props}) => (
   </LinkContainer>
 )
 
-
+const rows = [
+  "first row",
+  "second row",
+  "third row"
+  // .... and more
+];
+ 
+// Custom cell implementation with special prop
+/*const MyCustomCell = ({ mySpecialProp }) =>
+  <Cell>
+    {mySpecialProp === "column2" ? "I'm column 2" : "I'm not column 3"}
+</Cell>; */
+ 
 
 
 class DemoApplication extends React.Component {
 
+  constructor(props) {
+  super(props);
+  this.rows = //json data
+  this.state = {
+    filteredDataList: this.rows
+  };
+}
   render() {
     return (
 
@@ -70,8 +89,32 @@ class DemoApplication extends React.Component {
                             <NavItem exact className="nav-link" > <span className="pillar-space"> | </span> Demo Families </NavItem>
                         </a>
                     </ul>
-                      
-                      <DataTable />
+                      <Table
+                          rowHeight={50}
+                          rowsCount={rows.length}
+                          width={900}
+                          height={250}
+                          headerHeight={50}>
+                          <Column
+                            header={<Cell>Col 1</Cell>}
+                            cell={<Cell>Column 1 static content</Cell>}
+                            width={300}
+                          />
+                          <Column
+                            header={<Cell>Col 2</Cell>}
+                            //cell={<MyCustomCell mySpecialProp="column2" />}
+                              cell={<Cell>Column 2 static content</Cell>}
+                            width={300}
+                          />
+                          <Column
+                            header={<Cell>Col 3</Cell>}
+                          /*  cell={({rowIndex, ...props}) => (
+                              <Cell {...props}> Data for column 3: {rows[rowIndex]}</Cell>
+                            )}*/
+                              cell={<Cell>Column 3 static content</Cell>}
+                            width={300}
+                          />
+                        </Table>,
                   </div>
                  
                 </div>
